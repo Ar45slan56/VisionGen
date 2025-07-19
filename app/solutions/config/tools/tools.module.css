@@ -1,0 +1,151 @@
+.wrapper {
+  padding: 5rem 2rem;
+  background: #f9fafb;
+  font-family: "Segoe UI", sans-serif;
+  color: #111;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0d3b66;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #444;
+}
+
+/* 🔵 Animated Bar */
+.animatedBar {
+  background: #0076ce;
+  padding: 1rem 0;
+  margin: 3rem 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.scrollContent {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 20s linear infinite;
+  white-space: nowrap;
+}
+
+.scrollContent span {
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0d3b66;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #555;
+}
+
+.expanded {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.faqs {
+  margin-top: 5rem;
+}
+
+.faqs h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #0d3b66;
+}
+
+.faqs details {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.faqs summary {
+  font-weight: 600;
+  color: #333;
+}
+
+.faqs p {
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+/* CTA */
+.ctaSection {
+  margin-top: 5rem;
+  background: #0d3b66;
+  padding: 3rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.ctaSection h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #06c167;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #05a754;
+}

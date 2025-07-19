@@ -1,0 +1,93 @@
+.hero {
+  position: relative;
+  width: 105%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #8888c9, #2738ef);
+  color: rgb(251, 251, 251);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  background-color: #00ffc3;
+  color: #ee1717;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00ffc3;
+}
+
+.cta:hover {
+  background-color: #00e6b0;
+  box-shadow: 0 0 20px #00ffc3, 0 0 30px #00ffc3;
+}
+
+.buttonGroup {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  background-color: #00ffc3;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00ffc3;
+}
+
+.ctaPrimary:hover {
+  background-color: #00e6b0;
+  box-shadow: 0 0 20px #00ffc3, 0 0 30px #00ffc3;
+}
+
+.ctaSecondary {
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #00ffc3;
+  border: 2px solid #00ffc3;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaSecondary:hover {
+  background-color: #00ffc3;
+  color: #000;
+  box-shadow: 0 0 20px #00ffc3;
+}

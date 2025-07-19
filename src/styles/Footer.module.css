@@ -1,0 +1,272 @@
+/* === FOOTER WRAPPER === */
+.footer {
+  position: relative;
+  background: radial-gradient(circle at top center, #1e365f, #0c457e);
+  color: #fff;
+  padding: 5rem 2rem 2rem;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* === ANIMATED LIGHT BLUE GLOW === */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -25%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(ellipse at center, rgba(0, 166, 255, 0.15), transparent 70%);
+  animation: moveGlow 14s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes moveGlow {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 25px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* === CONTENT LAYOUT === */
+.top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+/* === BRANDING === */
+.logo {
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  transition: color 0.4s ease;
+  filter: drop-shadow(0 0 10px #00c3ff);
+}
+
+.logo:hover {
+  color: #00ffc3;
+  filter: drop-shadow(0 0 14px #00ffc3);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+
+/* === SOCIAL ICONS === */
+.social {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+
+.social a {
+  color: #bbb;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+  color: #00ffc3;
+  transform: scale(1.2) rotateZ(3deg);
+}
+
+/* === SECTION HEADINGS === */
+.services h4,
+.contact h4,
+.newsletter h4 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === LINKS === */
+.services ul,
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services li,
+.contact li {
+  margin-bottom: 0.6rem;
+}
+
+.services a {
+  color: #ccc;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.services a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00ffc3;
+  transition: width 0.3s ease;
+}
+
+.services a:hover {
+  color: #00ffc3;
+}
+
+.services a:hover::after {
+  width: 100%;
+}
+
+/* === CONTACT INFO === */
+.contact p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+/* === NEWSLETTER FORM === */
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.newsletter input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  background: #13202f;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 195, 0.15);
+  animation: pulseBorder 4s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter input:focus {
+  box-shadow: 0 0 0 2px #00ffc3, 0 0 12px rgba(0, 255, 195, 0.3);
+  transform: scale(1.01);
+}
+
+@keyframes pulseBorder {
+  0% { box-shadow: 0 0 0 2px rgba(0,255,195,0.1), 0 0 6px rgba(0,255,195,0.15); }
+  50% { box-shadow: 0 0 0 3px rgba(0,255,195,0.25), 0 0 14px rgba(0,255,195,0.4); }
+  100% { box-shadow: 0 0 0 2px rgba(0,255,195,0.1), 0 0 6px rgba(0,255,195,0.15); }
+}
+
+.newsletter button {
+  padding: 0.6rem;
+  background: linear-gradient(135deg, #00c3ff, #06c167);
+  color: #111;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.newsletter button:hover {
+  transform: translateY(-3px) scale(1.04);
+  background: linear-gradient(135deg, #06c167, #00ffc3);
+}
+
+/* === BOTTOM BAR === */
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.bottomLinks {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.bottomLinks a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bottomLinks a:hover {
+  color: #00ffc3;
+}
+
+.lang {
+  border: 1px solid #444;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.lang:hover {
+  border-color: #00ffc3;
+  color: #00ffc3;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social {
+    justify-content: center;
+  }
+
+  .tagline,
+  .contact p,
+  .services li,
+  .newsletter input,
+  .newsletter button {
+    text-align: center;
+  }
+}
+/* === INTERACTIVE CONTACT LINK === */
+.contactLink {
+  color: #00ffc3;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.contactLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: #00ffc3;
+  transition: width 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #06c167;
+}
+
+.contactLink:hover::after {
+  width: 100%;
+}

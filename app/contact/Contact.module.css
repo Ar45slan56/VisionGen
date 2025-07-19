@@ -1,0 +1,94 @@
+/* 🌟 Container Layout */
+.container {
+  max-width: 700px;
+  margin: 6rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-family: "Geist", sans-serif;
+}
+
+/* ✨ Title Styling */
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+/* ✅ Success Message */
+.success {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #06c167;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* 🧾 Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* 🔲 Input, Select, Textarea Styling */
+.form input,
+.form select,
+.form textarea {
+  padding: 1rem 1.2rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: #06c167;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(6, 193, 103, 0.2);
+}
+
+/* 🟩 Submit Button */
+.form button {
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #06c167;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #059c56;
+}
+
+.form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .form button {
+    font-size: 1rem;
+  }
+}

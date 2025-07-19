@@ -1,0 +1,166 @@
+.page {
+  font-family: "Geist", sans-serif;
+  background: #f9fafb;
+  color: #111;
+  padding-bottom: 4rem;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 3rem 3rem;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+}
+
+.textContent {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.textContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0a0a23;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.robotImg {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Auto Scroll Banner */
+.autoScrollBanner {
+  width: 100%;
+  overflow: hidden;
+  background: #110265;
+  color: rgb(234, 241, 230);
+  padding: 1rem 0;
+  white-space: nowrap;
+  position: relative;
+  font-size: 1rem;
+}
+
+.scrollContent {
+  display: flex;
+  animation: scroll-left 5s linear infinite;
+}
+
+.scrollRow {
+  display: flex;
+  gap: 2.5rem;
+  padding-right: 5rem;
+  align-items: center;
+}
+
+.scrollItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.scrollItem svg {
+  font-size: 1.2rem;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+
+/* Cards Section */
+.cardsSection {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cardsSection h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #0a0a23;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: #0a0a23;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Contact CTA */
+.contactCta {
+  background: #eef3ff;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  max-width: 900px;
+  margin: 4rem auto 0;
+}
+
+.contactCta h2 {
+  font-size: 2rem;
+  color: #0a0a23;
+  margin-bottom: 1rem;
+}
+
+.contactCta p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  background-color: #06c167;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(6, 193, 103, 0.4);
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #05a354;
+}
