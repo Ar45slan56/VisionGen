@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiChevronDown, FiChevronRight, FiMenu, FiX } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiChevronRight,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
 import gsap from "gsap";
 import styles from "../styles/Navbar.module.css";
 import navLinks from "../data/navLinks";
@@ -18,69 +23,85 @@ const Navbar = () => {
   const [activeSubDropdown, setActiveSubDropdown] = useState(null);
   const [mobileActive, setMobileActive] = useState({});
 
-  const dropdownRefs = useRef([]);
-  const subDropdownRefs = useRef([]);
+  const dropdownRefs = useRef({});
+  const subDropdownRefs = useRef({});
 
-  // Scroll effect (no hiding navbar, just background change)
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Animate dropdown
   useEffect(() => {
     if (activeDropdown !== null && dropdownRefs.current[activeDropdown]) {
-      gsap.fromTo(
-        dropdownRefs.current[activeDropdown],
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
+      requestAnimationFrame(() =>
+        gsap.fromTo(
+          dropdownRefs.current[activeDropdown],
+          { opacity: 0, y: -10 },
+          { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }
+        )
       );
     }
   }, [activeDropdown]);
 
   useEffect(() => {
-    if (activeSubDropdown !== null && subDropdownRefs.current[activeSubDropdown]) {
-      gsap.fromTo(
-        subDropdownRefs.current[activeSubDropdown],
-        { opacity: 0, x: -10 },
-        { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }
+    if (
+      activeSubDropdown !== null &&
+      subDropdownRefs.current[activeSubDropdown]
+    ) {
+      requestAnimationFrame(() =>
+        gsap.fromTo(
+          subDropdownRefs.current[activeSubDropdown],
+          { opacity: 0, x: -10 },
+          { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }
+        )
       );
     }
   }, [activeSubDropdown]);
 
-  const toggleDropdown = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
+  const toggleDropdown = useCallback((index) => {
+    setActiveDropdown((prev) => (prev === index ? null : index));
     setActiveSubDropdown(null);
-  };
+  }, []);
 
-  const toggleMobileDropdown = (key) => {
+  const toggleMobileDropdown = useCallback((key) => {
     setMobileActive((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
+  }, []);
 
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles.navbarScrolled : ""}`}>
+    <nav
+      className={`${styles.navbar} ${isScrolled ? styles.navbarScrolled : ""}`}
+    >
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/" className={styles.logoWrapper}>
-            <Image src="/logovision.png" alt="VisionGEN Logo" width={120} height={60} />
+          <Link href="/">
+            <Image
+              src="/logovision2.png"
+              alt="VisionGEN Logo"
+              width={140}
+              height={50}
+              priority
+            />
           </Link>
         </div>
 
-        <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FiX size={26} color="#06c167" /> : <FiMenu size={26} color="#06c167" />}
+        <div
+          className={styles.hamburger}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          {menuOpen ? (
+            <FiX size={26} color="#06c167" />
+          ) : (
+            <FiMenu size={26} color="#06c167" />
+          )}
         </div>
 
         <ul className={styles.navLinks}>
           {navLinks.map((item, index) => (
             <li
               key={index}
-              className={`${item.subItems ? styles.hasDropdown : ""} ${
-                pathname === item.href ? styles.activeLink : ""
-              }`}
+              className={`${item.subItems ? styles.hasDropdown : ""} ${pathname === item.href ? styles.activeLink : ""
+                }`}
               onMouseEnter={() => item.subItems && toggleDropdown(index)}
               onMouseLeave={() => {
                 setActiveDropdown(null);
@@ -95,7 +116,8 @@ const Navbar = () => {
                 <span className={styles.dropdownLabel}>
                   {item.label}
                   <FiChevronDown
-                    className={`${styles.arrow} ${activeDropdown === index ? styles.rotate : ""}`}
+                    className={`${styles.arrow} ${activeDropdown === index ? styles.rotate : ""
+                      }`}
                   />
                 </span>
               )}
@@ -104,14 +126,18 @@ const Navbar = () => {
                 <ul
                   className={styles.dropdown}
                   ref={(el) => (dropdownRefs.current[index] = el)}
-                  style={{ display: activeDropdown === index ? "block" : "none" }}
+                  style={{
+                    display: activeDropdown === index ? "block" : "none",
+                  }}
                 >
                   {item.subItems.map((subItem, subIndex) =>
                     subItem.subItems ? (
                       <li
                         key={subIndex}
                         className={styles.hasDropdown}
-                        onMouseEnter={() => setActiveSubDropdown(`${index}-${subIndex}`)}
+                        onMouseEnter={() =>
+                          setActiveSubDropdown(`${index}-${subIndex}`)
+                        }
                         onMouseLeave={() => setActiveSubDropdown(null)}
                       >
                         <span className={styles.dropdownLabel}>
@@ -121,16 +147,23 @@ const Navbar = () => {
                         <ul
                           className={styles.subDropdown}
                           ref={(el) =>
-                            (subDropdownRefs.current[`${index}-${subIndex}`] = el)
+                            (subDropdownRefs.current[
+                              `${index}-${subIndex}`
+                            ] = el)
                           }
                           style={{
                             display:
-                              activeSubDropdown === `${index}-${subIndex}` ? "block" : "none",
+                              activeSubDropdown === `${index}-${subIndex}`
+                                ? "block"
+                                : "none",
                           }}
                         >
                           {subItem.subItems.map((deepItem, deepIndex) => (
                             <li key={deepIndex}>
-                              <Link href={deepItem.href || "#"} className={styles.dropdownLink}>
+                              <Link
+                                href={deepItem.href || "#"}
+                                className={styles.dropdownLink}
+                              >
                                 {deepItem.label}
                               </Link>
                             </li>
@@ -139,7 +172,10 @@ const Navbar = () => {
                       </li>
                     ) : (
                       <li key={subIndex}>
-                        <Link href={subItem.href || "#"} className={styles.dropdownLink}>
+                        <Link
+                          href={subItem.href || "#"}
+                          className={styles.dropdownLink}
+                        >
                           {subItem.label}
                         </Link>
                       </li>
@@ -149,19 +185,27 @@ const Navbar = () => {
               )}
             </li>
           ))}
+
           <li>
-            <Link href="/book-call" className={styles.bookButton}>
+            <Link href="/contact" className={styles.bookButton}>
               Book a Free Call
             </Link>
           </li>
         </ul>
 
-        {/* Mobile */}
-        <div className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}>
+        {/* Mobile Menu */}
+        <div
+          className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""
+            }`}
+        >
           {navLinks.map((item, index) => (
             <div key={index} className={styles.mobileItem}>
               {item.href ? (
-                <Link href={item.href} onClick={() => setMenuOpen(false)} className={styles.link}>
+                <Link
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={styles.link}
+                >
                   {item.label}
                 </Link>
               ) : (
@@ -172,15 +216,13 @@ const Navbar = () => {
                   >
                     {item.label}
                     <FiChevronDown
-                      className={`${styles.arrow} ${
-                        mobileActive[index] ? styles.rotate : ""
-                      }`}
+                      className={`${styles.arrow} ${mobileActive[index] ? styles.rotate : ""
+                        }`}
                     />
                   </span>
                   <div
-                    className={`${styles.mobileDropdownWrapper} ${
-                      mobileActive[index] ? styles.open : ""
-                    }`}
+                    className={`${styles.mobileDropdownWrapper} ${mobileActive[index] ? styles.open : ""
+                      }`}
                   >
                     <div className={styles.mobileDropdown}>
                       {item.subItems?.map((sub, subIndex) =>
@@ -194,17 +236,17 @@ const Navbar = () => {
                             >
                               {sub.label}
                               <FiChevronDown
-                                className={`${styles.arrow} ${
-                                  mobileActive[`${index}-${subIndex}`]
-                                    ? styles.rotate
-                                    : ""
-                                }`}
+                                className={`${styles.arrow} ${mobileActive[`${index}-${subIndex}`]
+                                  ? styles.rotate
+                                  : ""
+                                  }`}
                               />
                             </span>
                             <div
-                              className={`${styles.mobileDropdownWrapper} ${
-                                mobileActive[`${index}-${subIndex}`] ? styles.open : ""
-                              }`}
+                              className={`${styles.mobileDropdownWrapper} ${mobileActive[`${index}-${subIndex}`]
+                                ? styles.open
+                                : ""
+                                }`}
                             >
                               <div className={styles.mobileSubDropdown}>
                                 {sub.subItems.map((deep, deepIndex) => (
@@ -239,14 +281,8 @@ const Navbar = () => {
           <div className={styles.mobileItem}>
             <Link
               href="/book-call"
-              onClick={(e) => {
-                if (pathname === "/book-call") {
-                  e.preventDefault();
-                } else {
-                  setMenuOpen(false);
-                }
-              }}
               className={styles.bookButton}
+              onClick={() => setMenuOpen(false)}
             >
               Book a Free Call
             </Link>

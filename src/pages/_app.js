@@ -5,6 +5,7 @@ import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/footer";
+import BackgroundScene from "@/components/BackgroundScene";
 
 // ✅ Load NextSection without SSR
 const NextSection = dynamic(() => import("../components/NextSection"), {
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+       <BackgroundScene />
       <Navbar />
       <Hero />
       <NextSection />

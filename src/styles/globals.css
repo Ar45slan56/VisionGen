@@ -2,11 +2,9 @@
 
 /* 🌍 Global Theme Variables */
 :root {
-  /* Typography */
   --font-sans: "Geist Sans", Arial, Helvetica, sans-serif;
   --font-mono: "Geist Mono", Menlo, monospace;
 
-  /* Colors */
   --accent: #4f46e5;
   --background: #ffffff;
   --foreground: #171717;
@@ -15,22 +13,18 @@
   --text-muted: #6b7280;
   --border: #e5e7eb;
 
-  /* Elevation */
   --elevation-low: 0 1px 6px rgba(0, 0, 0, 0.05);
   --elevation-high: 0 4px 20px rgba(0, 0, 0, 0.08);
 
-  /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
   --space-lg: 3rem;
   --space-xl: 5rem;
 
-  /* Radius */
   --radius-sm: 6px;
   --radius-md: 12px;
 
-  /* Z-index */
   --z-nav: 100;
   --z-navbar: 1000;
   --z-backdrop: 999;
@@ -38,48 +32,47 @@
   --z-tooltip: 2000;
 }
 
-/* 🌚 Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* === GLOBAL STYLES === */
-
-html {
-  width: 100%;
-  overflow-x: hidden;
-  scrollbar-gutter: stable;
-}
-
-
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-sans);
-  background: var(--bg-light);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
+/* 🌐 Base HTML */
 html,
 body {
-  overflow-x: hidden;
-}
-
-body {
   margin: 0;
   padding: 0;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior: none; /* 🚫 No bounce/elastic scrolling */
+  scroll-behavior: smooth;
   font-family: var(--font-sans);
   background-color: var(--background);
   color: var(--foreground);
-  overscroll-behavior: none;
-  overflow-y: hidden;
-  scrollbar-gutter: stable;
   min-height: 100vh;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
+
+/* 🛡 Prevent body children from overflowing */
+* {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  max-width: 100%;
+}
+
+/* 🔗 Links */
+a {
+  color: #06c167;
+  text-decoration: none;
 }
 
 /* ✨ Navbar */
@@ -95,16 +88,15 @@ body {
 
 .navbarScrolled,
 .navbar:hover {
-  background-color: #ffffff;
+  background-color: var(--surface);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* 🖼️ Logo Hover */
 .logoWrapper:hover {
   opacity: 0.9;
 }
 
-/* 📱 Mobile Typography */
+/* 📱 Responsive Typography */
 @media screen and (max-width: 768px) {
   body {
     font-size: 15px;
@@ -116,9 +108,10 @@ body {
   }
 }
 
-/* 📦 Main Layout (Padding for Navbar) */
+/* 📦 Main Layout (adjusting for Navbar) */
 main {
-  padding-top: 80px; /* Adjust based on navbar height */
-  min-height: 100vh;
+  padding-top: 80px;
   background-color: var(--background);
+  min-height: 100vh;
+  overflow-x: hidden;
 }

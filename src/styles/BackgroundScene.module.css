@@ -1,0 +1,32 @@
+.canvasWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.textOverlay {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: -1;
+  color: white;
+  font-family: var(--font-sans);
+  pointer-events: none;
+}
+
+.textOverlay h1 {
+  font-size: 2.5rem;
+  opacity: 0;
+}
+
+.textOverlay h2 {
+  font-size: 2rem;
+  color: #06c167;
+  opacity: 0;
+}
