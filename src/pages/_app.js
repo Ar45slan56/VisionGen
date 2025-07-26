@@ -1,13 +1,21 @@
 import { useEffect } from "react";
-import dynamic from "next/dynamic"; // ✅ for disabling SSR of client-only components
+import dynamic from "next/dynamic";
 import "../styles/globals.css";
 
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import BackgroundScene from "@/components/BackgroundScene";
+import ChatbotWidget from "@/components/ChatbotWidget";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import DemoSection from "@/components/DemoSection";
+import IndustriesSection from "@/components/IndustriesSection";
+import TestimonialsSection from "@/components/Testimonials";
+import Contact from "../../app/contact/page";
+import ContactSection from "@/components/ContactSecion";
+import CareersSection from "@/components/CareersSection";
 
-// ✅ Load NextSection without SSR
+// ✅ Disable SSR for NextSection if it uses window / animation libs
 const NextSection = dynamic(() => import("../components/NextSection"), {
   ssr: false,
 });
@@ -22,13 +30,25 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-       <BackgroundScene />
+      {/* 🌌 Background Layer */}
+    
+
+      {/* 🌐 Main App Components */}
       <Navbar />
       <Hero />
+        <BackgroundScene />
       <NextSection />
-      <Footer />
       
+      <WhyChooseUsSection />
+      {/* 📦 Page-Specific Content (if needed) */}
       <Component {...pageProps} />
+      <ChatbotWidget />
+      <DemoSection/>
+      <IndustriesSection />
+      <TestimonialsSection />
+      <ContactSection />
+      <CareersSection />
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,13 @@
+// data/navLinks.js
+
 const navLinks = [
   {
-    label: "Solutions",
+    label: "Services",
     subItems: [
       {
         label: "AI Development & Automation",
         subItems: [
+         
           { label: "Intelligent Chatbots", href: "/solutions/ai/chatbots" },
           { label: "AI Agents & RAG", href: "/solutions/ai/agents" },
           { label: "Language Models (NLP)", href: "/solutions/ai/nlp" },
@@ -36,7 +39,7 @@ const navLinks = [
   },
 
   {
-    label: "Industries We Serve",
+    label: "Industries",
     subItems: [
       { label: "Healthcare AI", href: "/industries/healthcare" },
       { label: "Finance Intelligence", href: "/industries/finance" },
@@ -47,7 +50,7 @@ const navLinks = [
   },
 
   {
-    label: "Showcase",
+    label: "Our Products",
     subItems: [
       { label: "Case Studies", href: "/showcase/cases" },
       { label: "Live Demos", href: "/showcase/demos" },
@@ -56,7 +59,7 @@ const navLinks = [
   },
 
   {
-    label: "About Vision-GEN",
+    label: "About VisionGen",
     subItems: [
       { label: "Who We Are", href: "/about" },
       { label: "Our Vision", href: "/about/vision" },
@@ -66,6 +69,7 @@ const navLinks = [
     ],
   },
 
+  // Optional future section
   {
     label: "Resources & Insights",
     subItems: [

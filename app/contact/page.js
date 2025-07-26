@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./Contact.module.css";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -55,7 +56,10 @@ export default function Contact() {
     <div className={styles.container}>
       <h2 className={styles.title}>Contact Us</h2>
       {submitted ? (
-        <p className={styles.success}>Thank you! We’ll be in touch soon.</p>
+        <p className={styles.success}>
+          ✅ Thank you! <br />
+          Our team will reach out to you shortly.
+        </p>
       ) : (
         <form className={styles.form} onSubmit={handleSubmit}>
           <input

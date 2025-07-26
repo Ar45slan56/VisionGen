@@ -1,94 +1,103 @@
-/* 🌟 Container Layout */
+/* Container */
 .container {
   max-width: 700px;
-  margin: 6rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  font-family: "Geist", sans-serif;
+  margin: 0 auto;
+  padding: 60px 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-/* ✨ Title Styling */
+/* Title */
 .title {
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
   text-align: center;
-  margin-bottom: 2rem;
-  color: #111827;
+  color: #1a1a1a;
+  font-weight: 600;
 }
 
-/* ✅ Success Message */
+/* Success message */
 .success {
   text-align: center;
   font-size: 1.2rem;
-  color: #06c167;
-  font-weight: 600;
-  margin-top: 2rem;
+  color: #16a34a;
+  background: #e6f8ec;
+  padding: 16px;
+  border-radius: 8px;
 }
 
-/* 🧾 Form Styling */
+/* Form layout */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
 }
 
-/* 🔲 Input, Select, Textarea Styling */
+/* Input styles */
 .form input,
 .form select,
 .form textarea {
-  padding: 1rem 1.2rem;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
   border: 1px solid #d1d5db;
-  border-radius: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #111827;
   font-size: 1rem;
-  outline: none;
-  transition: all 0.3s ease;
-  background: #f9fafb;
+  transition: border-color 0.3s ease;
 }
 
 .form input:focus,
 .form select:focus,
 .form textarea:focus {
-  border-color: #06c167;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(6, 193, 103, 0.2);
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
-/* 🟩 Submit Button */
+/* Submit button */
 .form button {
-  padding: 1rem 1.2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background-color: #06c167;
-  color: #ffffff;
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  padding: 12px;
   border: none;
-  border-radius: 50px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .form button:hover {
-  background-color: #059c56;
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
 }
 
 .form button:disabled {
-  background-color: #cccccc;
+  background-color: #9ca3af;
   cursor: not-allowed;
 }
 
-/* 📱 Responsive Design */
-@media (max-width: 600px) {
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
   .container {
-    margin: 2rem 1rem;
-    padding: 1.5rem;
+    padding: 40px 16px;
   }
 
   .title {
-    font-size: 2rem;
-  }
-
-  .form button {
-    font-size: 1rem;
+    font-size: 1.8rem;
   }
 }
