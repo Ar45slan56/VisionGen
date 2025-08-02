@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes fadeInBanner {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 /* 🌍 Global Theme Variables */
 :root {
@@ -79,10 +104,10 @@ button:focus-visible {
 }
 
 /* 🔗 Links */
-a {
+/* a {
   color: #06c167;
   text-decoration: none;
-}
+} */
 
 /* ✨ Navbar */
 .navbar {

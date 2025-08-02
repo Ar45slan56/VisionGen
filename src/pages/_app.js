@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
       {/* 🌐 Main App Components */}
       <Navbar />
       <Hero />
-        <BackgroundScene />
+      {/* <BackgroundScene /> */}
       <NextSection />
       
       <WhyChooseUsSection />

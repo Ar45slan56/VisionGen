@@ -93,46 +93,51 @@
 /* =========================================================================
    BLOG SECTION — Articles, News, and Insights
 =========================================================================== */
+/* =========================================================================
+   BLOG SECTION — Latest AI Articles
+=========================================================================== */
 .blogSection {
-  margin-top: 80px;
-  background: #f8fafc;
-  padding: 80px 20px;
+  margin-top: 100px;
+  background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+  padding: 100px 20px;
+  font-family: 'Inter', sans-serif;
 }
 
 .blogSection .blogHeading {
-  font-size: clamp(2.2rem, 2.5vw, 2.5rem);
+  font-size: clamp(2.4rem, 3vw, 2.8rem);
   font-weight: 700;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   text-align: center;
   color: #0f172a;
+  line-height: 1.2;
 }
 
 /* Blog Grid */
 .blogSection .blogs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 36px;
 }
 
 /* Blog Card */
 .blogSection .blogCard {
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transition: all 0.35s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  border: 1px solid #1c7dbeae;
-  min-height: 420px;
+  border: 1px solid #d1d5db;
+  position: relative;
+  min-height: 200px;
 }
 
 .blogSection .blogCard:hover {
-  transform: translateY(-6px) scale(1.02);
-  background: linear-gradient(135deg, #29b8e8, #cfefff);
-  box-shadow: 0 16px 32px rgba(14, 165, 233, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Blog Image */
@@ -143,30 +148,27 @@
   transition: transform 0.4s ease;
   background: #186fda;
   display: block;
-  border-radius: 20px;
 }
 
 .blogSection .blogCard:hover .blogImage {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* Blog Content */
 .blogSection .blogContent {
-  padding: 22px;
+  padding: 24px 22px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #1e293b;
 }
 
-/* Title + Description */
 .blogSection .blogTitle {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 12px;
-  line-height: 1.5;
-  color: #0f172a;
+  line-height: 1.4;
+  color: #1e293b;
   transition: color 0.3s ease;
 }
 
@@ -175,29 +177,67 @@
 }
 
 .blogSection .blogDescription {
-  font-size: 0.96rem;
+  font-size: 1rem;
   color: #475569;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-/* Read More */
+/* Read More Link */
 .blogSection .readMore {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #0284c7;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: auto;
+  text-decoration: none;
 }
 
 .blogSection .blogCard:hover .readMore {
   text-decoration: underline;
 }
 
-/* Loading Placeholder */
-.blogSection .loading {
-  text-align: center;
-  font-style: italic;
-  color: #94a3b8;
-  padding: 30px;
-  font-size: 1.1rem;
+/* Responsive */
+@media (max-width: 640px) {
+  .blogSection {
+    padding: 60px 16px;
+  }
+
+  .blogSection .blogHeading {
+    font-size: 2rem;
+  }
+
+  .blogSection .blogs {
+    gap: 12px;
+  }
+
+  .blogSection .blogImage {
+    height: 120px;
+  }
+}
+
+/* Read More Button */
+.blogSection .readMore {
+  font-size: 0.95rem;
+  color: #0284c7;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  margin-top: auto;
+}
+
+.blogSection .readMore:hover {
+  text-decoration: underline;
+}
+
+/* Expanded Blog Content */
+.blogSection .expandedContent {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-top: 1rem;
+  line-height: 1.6;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
 }

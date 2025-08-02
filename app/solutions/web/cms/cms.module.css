@@ -1,0 +1,134 @@
+/* ===== CMS Page Styles ===== */
+.cmsWrapper {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Blog section */
+.blogSection {
+  margin-top: 40px;
+}
+
+.blogHeading {
+  text-align: center;
+  font-size: 2rem;
+  color: #facc15;
+  margin-bottom: 2rem;
+}
+
+/* Grid of cards */
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0 20px;
+}
+
+/* Blog card */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.card:hover {
+  border-color: #38bdf8;
+}
+
+.cardIcon {
+  font-size: 3rem;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+.content h3 {
+  font-size: 1.25rem;
+  color: #f1f5f9;
+}
+
+.content p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+.expandedContent {
+  margin-top: 15px;
+}
+
+.readMore {
+  display: inline-block;
+  margin-top: 10px;
+  color: #facc15;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.expanded {
+  background-color: #334155;
+}
+/* Icon styles */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: #10b981; /* teal green */
+  margin-bottom: 1rem;
+}
+
+.cardIcon {
+  font-size: 3rem;
+}
+
+/* CTA Button */
+.ctaWrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(to right, #0ea5e9, #22d3ee);
+  color: white;
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.25);
+}
+
+.ctaButton:hover {
+  background: linear-gradient(to right, #22d3ee, #0ea5e9);
+  transform: scale(1.05);
+}
+

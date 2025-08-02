@@ -10,7 +10,7 @@ const features = [
     title: "Secure & Reliable",
     description: (
       <>
-        Our infrastructure ensures industry-grade security and uptime.<br />
+        Our infrastructure ensures industry-grade security and uptime.
         <ul className="list-disc list-inside mt-2 text-slate-400 text-sm">
           <li>End-to-end encryption</li>
           <li>99.99% uptime SLA</li>
@@ -77,7 +77,7 @@ const features = [
   },
 ];
 
-export default function Home() {
+export default function WhyChooseUs() {
   const [expanded, setExpanded] = useState(null);
 
   const toggleCard = (index) => {
@@ -85,85 +85,63 @@ export default function Home() {
   };
 
   return (
-    <main className="relative bg-gradient-to-b from-[#0e1833] via-[#0c1222] to-[#0e1833] min-h-screen text-white font-sans overflow-x-hidden">
-      {/* Hero Section */}
-      {/* <section className="text-center py-24 px-4 md:px-8">
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold leading-tight"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+    <section className="bg-gradient-to-b from-[#0e1833] via-[#0c1222] to-[#0e1833] text-white font-sans py-20 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto text-center mb-16">
+        <motion.h2
+          className="text-3xl md:text-5xl font-bold"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          Empowering the Future with AI
-        </motion.h1>
+          Why Choose VisionGEN?
+        </motion.h2>
         <motion.p
-          className="mt-6 text-lg max-w-2xl mx-auto text-slate-300"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="text-slate-300 mt-4 max-w-2xl mx-auto text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          VisionGEN delivers smart AI solutions tailored to your growth. Fast, reliable, and future-proof.
+          We combine innovation, performance, and strategy to help your business grow with AI.
         </motion.p>
-      </section> */}
+      </div>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 px-6 md:px-12 bg-transparent relative z-10">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <motion.h2
-            className="text-3xl md:text-5xl font-bold text-white"
-            initial={{ opacity: 0, y: 40 }}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {features.map((feature, idx) => (
+          <motion.div
+            key={idx}
+            className={`bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md border border-white/10 transition-all duration-300 cursor-pointer ${
+              expanded === idx ? "scale-[1.03]" : "hover:scale-[1.03]"
+            }`}
+            onClick={() => toggleCard(idx)}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ delay: idx * 0.2, duration: 0.5 }}
             viewport={{ once: true }}
+            role="button"
+            aria-expanded={expanded === idx}
+            tabIndex={0}
           >
-            Why Choose VisionGEN?
-          </motion.h2>
-          <motion.p
-            className="text-slate-300 mt-4 max-w-2xl mx-auto text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            We combine innovation, performance, and strategy to help your business grow with AI.
-          </motion.p>
-        </div>
+            <div className="mb-4">{feature.icon}</div>
+            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {features.map((feature, idx) => (
-            <motion.div
-              key={idx}
-              className={`bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md border border-white/10 transition-all duration-300 ${
-                expanded === idx ? "scale-[1.03]" : "hover:scale-[1.03]"
-              }`}
-              onClick={() => toggleCard(idx)}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.2, duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-2 cursor-pointer">
-                {feature.title}
-              </h3>
-
-              <AnimatePresence>
-                {expanded === idx && (
-                  <motion.div
-                    className="text-slate-300 text-sm mt-2 border-t border-white/10 pt-3"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {feature.description}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-    </main>
+            <AnimatePresence>
+              {expanded === idx && (
+                <motion.div
+                  className="text-slate-300 text-sm mt-2 border-t border-white/10 pt-3"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {feature.description}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 }

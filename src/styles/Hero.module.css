@@ -1,93 +1,84 @@
 .hero {
   position: relative;
-  width: 105%;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(to bottom, #8888c9, #2738ef);
-  color: rgb(251, 251, 251);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(to bottom, #0e0e2e, #1a1a3b);
+  color: #ffffff;
 }
 
-.overlay {
-  position: absolute;
+.contentWrapper {
+  position: relative;
   z-index: 10;
-  text-align: center;
-  padding: 2rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5%;
+}
+
+.leftContent {
+  max-width: 50%;
+  text-align: left;
+}
+
+.rightVisual {
+  width: 45%;
+  height: 70vh;
 }
 
 .title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #cccccc;
   max-width: 600px;
-  margin: 0 auto;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.7rem 2rem;
-  font-size: 1rem;
-  background-color: #00ffc3;
-  color: #ee1717;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px #00ffc3;
-}
-
-.cta:hover {
-  background-color: #00e6b0;
-  box-shadow: 0 0 20px #00ffc3, 0 0 30px #00ffc3;
+  margin: 0.5rem 0;
 }
 
 .buttonGroup {
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
-  gap: 1.2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .ctaPrimary {
   padding: 0.7rem 2rem;
   font-size: 1rem;
-  background-color: #00ffc3;
-  color: #000;
+  background-color: #122687;
+  color: #ffffff;
   border: none;
   border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px #00ffc3;
+  box-shadow: 0 0 10px #03ffee;
 }
 
 .ctaPrimary:hover {
-  background-color: #00e6b0;
-  box-shadow: 0 0 20px #00ffc3, 0 0 30px #00ffc3;
+  background-color: #1b377d;
+  box-shadow: 0 0 20px #2819af, 0 0 30px #00ffc3;
 }
 
 .ctaSecondary {
   padding: 0.7rem 2rem;
   font-size: 1rem;
   background-color: transparent;
-  color: #00ffc3;
-  border: 2px solid #00ffc3;
+  color: #0073ff;
+  border: 2px solid #6600ff;
   border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .ctaSecondary:hover {
-  background-color: #00ffc3;
-  color: #000;
-  box-shadow: 0 0 20px #00ffc3;
+  background-color: #152554;
+  color: #ffffff;
+  box-shadow: 0 0 20px #5840a6;
 }

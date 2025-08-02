@@ -34,7 +34,7 @@ function DotsGroup() {
       <Points geometry={geometry}>
         <PointMaterial
           transparent
-          color="#00ffc3"
+          color="#002affff"
           size={0.02}
           sizeAttenuation
           depthWrite={false}
