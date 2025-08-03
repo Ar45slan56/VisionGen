@@ -110,7 +110,7 @@ export default function MultiLanguageSection() {
             className="mt-4 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           >
             Engage global customers with real-time AI-powered translation in over{" "}
-            <strong>100+ languages</strong>. Whether it's Arabic, Urdu, Mandarin, or Spanish — VisionGEN bots understand, respond, and adapt instantly.
+            <strong>100+ languages</strong>. Whether it&#39;s Arabic, Urdu, Mandarin, or Spanish — VisionGEN bots understand, respond, and adapt instantly.
           </motion.p>
 
           <motion.div
