@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import "../styles/globals.css";
 
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 import BackgroundScene from "@/components/BackgroundScene";
 import ChatbotWidget from "@/components/ChatbotWidget";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
