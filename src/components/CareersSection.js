@@ -8,7 +8,7 @@ export default function CareersSection() {
         Join Our Team
       </motion.h2>
       <p className="max-w-xl mx-auto text-gray-700 mb-6">
-        We're building the future of AI. We believe in transparency, growth, and passion.
+        <p>We&#39;re building the future of AI. We believe in transparency, growth, and passion.</p>
       </p>
       <a href="/careers" className="text-blue-700 underline font-semibold">View Open Roles →</a>
     </section>
