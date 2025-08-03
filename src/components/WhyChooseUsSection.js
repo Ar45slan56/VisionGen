@@ -24,7 +24,7 @@ const features = [
     title: "AI Expertise",
     description: (
       <>
-        Leverage our AI engineers' experience across domains like NLP, vision, and predictive analytics.
+         <p>Leverage our AI engineers&#39; experience across domains like NLP, vision, and predictive analytics.</p>
         <ul className="list-disc list-inside mt-2 text-slate-400 text-sm">
           <li>Chatbot & assistant integration</li>
           <li>Recommendation engines</li>
