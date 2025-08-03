@@ -89,7 +89,7 @@ export default function GenerativeAI() {
         </details>
         <details>
           <summary>Where is Generative AI used?</summary>
-          <p>In marketing, software, art, music, gaming, healthcare, and more. It's versatile and expanding rapidly.</p>
+           <p>In marketing, software, art, music, gaming, healthcare, and more. It&#39;s versatile and expanding rapidly.</p>
         </details>
         <details>
           <summary>Can it replace human creativity?</summary>
