@@ -4,6 +4,7 @@ import "../styles/globals.css";
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+// footer is adde
 import Footer from "@/components/Footer";
 import BackgroundScene from "@/components/BackgroundScene";
 import ChatbotWidget from "@/components/ChatbotWidget";
