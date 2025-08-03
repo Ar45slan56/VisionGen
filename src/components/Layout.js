@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import styles from "@/styles/PageWrapper.module.css";
+import Footer from "./Footer";
 
 export default function Layout({ title, subtitle, children }) {
   return (
@@ -12,9 +13,12 @@ export default function Layout({ title, subtitle, children }) {
           <div className={styles.wrapper}>
             {title && <h1 className={styles.heading}>{title}</h1>}
             {subtitle && <p className={styles.subheading}>{subtitle}</p>}
+
             {children}
+          
           </div>
         </main>
+        <Footer />
       </body>
     </html>
   );
