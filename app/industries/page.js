@@ -51,7 +51,7 @@ export default function Industries() {
             Industries <span className="text-cyan-400 drop-shadow-md">We Serve</span>
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-10">
-            We craft AI-first, scalable digital ecosystems tailored to your industry's needs — from healthcare to education.
+            We craft AI-first, scalable digital ecosystems tailored to your industry&apos;s needs — from healthcare to education.
           </p>
           <Link href="/contact" passHref>
             <button className="relative inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold shadow-xl hover:from-cyan-300 hover:to-blue-400 transition duration-300 hover:scale-105">
