@@ -89,7 +89,7 @@ export default function ToolsAutomation() {
         <h2>Frequently Asked Questions</h2>
         <details>
           <summary>Do these tools require coding knowledge?</summary>
-          <p>Some tools are no-code or low-code, while others are developer-focused. It depends on your team's needs.</p>
+          <p>Some tools are no-code or low-code, while others are developer-focused. It depends on your team&#39;s needs.</p>
         </details>
         <details>
           <summary>Can I integrate these tools with our CRM?</summary>
