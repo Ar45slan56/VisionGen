@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./generative.module.css";
 import { FaRobot, FaLightbulb, FaCogs, FaChartLine } from "react-icons/fa";
-
+// blogarticles
 const blogArticles = [
   {
     id: 1,
