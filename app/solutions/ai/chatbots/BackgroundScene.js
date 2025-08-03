@@ -5,7 +5,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { PointMaterial } from "@react-three/drei";
 
-const ParticleLines = ({ count = 180 }) => {
+const ParticleLines = (props) => {
+    const count = props.count ?? 180;
     const pointsRef = useRef();
     const linesRef = useRef();
     const particleData = useRef([]);
@@ -119,12 +120,11 @@ const BackgroundScene = () => {
         <div className="absolute inset-0 -z-10">
             <Canvas
                 camera={{ position: [0, 0, 25], fov: 60 }}
-                style={{ background: "#374659ff" }} // background color here
+                style={{ background: "#374659ff" }}
             >
                 <ambientLight intensity={0.4} />
                 <ParticleLines count={180} />
             </Canvas>
-
         </div>
     );
 };
