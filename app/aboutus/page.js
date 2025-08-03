@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     name: "Laura Chen",
-    feedback: "Incredible leadership and delivery — highly recommend their AI integration services.",
+    feedback: "Incredible leadership and delivery &mdash; highly recommend their AI integration services.",
   },
 ];
 
@@ -79,11 +79,11 @@ export default function AboutUs() {
           </p>
           <h3 className="text-3xl font-medium mb-4">What We Offer</h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-200">
-            <li>🤖 Intelligent Chatbots & Assistants</li>
+            <li>🤖 Intelligent Chatbots &amp; Assistants</li>
             <li>📈 AI-Powered Automation</li>
             <li>🧠 Machine Learning Model Training</li>
-            <li>🔍 NLP & Language Models (RAG, LLMs)</li>
-            <li>🧾 AI Meeting Bots & Summarizers</li>
+            <li>🔍 NLP &amp; Language Models (RAG, LLMs)</li>
+            <li>🧾 AI Meeting Bots &amp; Summarizers</li>
             <li>🔐 Secure AI Deployments</li>
           </ul>
         </motion.section>
@@ -122,7 +122,7 @@ export default function AboutUs() {
         >
           <h2 className="text-3xl font-semibold mb-6">What Our Clients Say</h2>
           <div className="bg-white bg-opacity-10 rounded-xl p-8 shadow-xl transition-all duration-500">
-            <p className="text-xl text-gray-100 italic mb-4">"{testimonials[index].feedback}"</p>
+            <p className="text-xl text-gray-100 italic mb-4">&ldquo;{testimonials[index].feedback}&rdquo;</p>
             <p className="text-sm text-purple-300">— {testimonials[index].name}</p>
           </div>
           <div className="mt-4 space-x-2">
@@ -130,9 +130,7 @@ export default function AboutUs() {
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`w-3 h-3 rounded-full ${
-                  i === index ? "bg-purple-400" : "bg-gray-400"
-                }`}
+                className={`w-3 h-3 rounded-full ${i === index ? "bg-purple-400" : "bg-gray-400"}`}
               ></button>
             ))}
           </div>
@@ -146,7 +144,9 @@ export default function AboutUs() {
           transition={{ duration: 1 }}
         >
           <h2 className="text-3xl font-bold text-white mb-4">Ready to innovate with AI?</h2>
-          <p className="text-white text-opacity-80 mb-6">Contact our team and let's shape the future together.</p>
+          <p className="text-white text-opacity-80 mb-6">
+            We&apos;re ready to help you build a smarter future. Reach out to our team today.
+          </p>
           <a
             href="/contact"
             className="inline-block bg-white text-purple-800 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
